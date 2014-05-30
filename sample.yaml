@@ -1,0 +1,9 @@
+- mode: concentration
+  app:
+   - iterm
+   - chrome
+- mode: relax
+  app:
+   - itunes
+   - chrome
+   - twitter
