@@ -15,7 +15,7 @@ class Viewer:
         frame = tkinter.Frame(tk, relief=RIDGE, borderwidth=2)
         frame.pack(fill=BOTH, expand=1)
 
-        l = tkinter.Label(frame, text="Mode Select")
+        l = tkinter.Label(frame, text="[ Mac mode select ]")
         l.pack(side=TOP, expand=1)
 
         self.__show_mode(frame)
@@ -31,8 +31,9 @@ class Viewer:
         tk.mainloop()
 
     def __show_mode(self, frame):
-        for data in self.mode_data:
-            l = tkinter.Label(frame, text=data['mode'])
+        for i, data in enumerate(self.mode_data):
+            text = str(i) + " : " +  data['mode']
+            l = tkinter.Label(frame, text=text)
             l.pack()
 
 

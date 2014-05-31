@@ -3,9 +3,6 @@
 import os
 import tkinter
 
-app_name = "safari"
-
-
 class Action:
     def __init__(self, mode_data):
         self.buf = tkinter.StringVar()
@@ -13,13 +10,12 @@ class Action:
 
         self.mode_data = mode_data
 
-    def test_method(self):
+    def __test_method(self):
         os.system('open -a' + app_name)
 
     def select_mode(self, event):
         if self.__have_input_mode() == "":
             return
-        print('execute to set env')
 
     def __have_input_mode(self):
         if self.buf.get():
@@ -27,7 +23,12 @@ class Action:
         else:
             return
 
-        for dic in self.mode_data:
+        for i, dic in enumerate(self.mode_data):
+            if str(i) == mode:
+                mode = dic['mode']
+                return mode
+
+        for i, dic in enumerate(self.mode_data):
             if dic['mode'] == mode:
                 mode = dic['mode']
                 return mode
