@@ -4,18 +4,20 @@ from tkinter.constants import*
 import yamlconfig
 import action
 
+TITLE = "[ Mac mode select ]"
+
 class Viewer:   
     def __init__(self, mode_data):
         self.mode_data = mode_data
 
-    def config(self):
+    def config(self, title):
 
         tk = tkinter.Tk()
 
         frame = tkinter.Frame(tk, relief=RIDGE, borderwidth=2)
         frame.pack(fill=BOTH, expand=1)
 
-        l = tkinter.Label(frame, text="[ Mac mode select ]")
+        l = tkinter.Label(frame, text=title)
         l.pack(side=TOP, expand=1)
 
         self.__show_mode(frame)
@@ -44,4 +46,4 @@ if __name__ == "__main__":
     data = yc.get_data()
 
     view = Viewer(data)
-    view.config()
+    view.config(TITLE)
