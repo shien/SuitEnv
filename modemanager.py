@@ -1,18 +1,8 @@
 import tkinter
 from tkinter.constants import*
 
-import os
-
 import yamlconfig
-
-app_name = "safari"
-
-def test_method():
-    #for app in app_list:
-    os.system("open -a" + app_name)
-
-def select_mode(event):
-    print('get event')
+import action
 
 class Viewer:   
     def __init__(self, mode_data):
@@ -28,19 +18,26 @@ class Viewer:
         l = tkinter.Label(frame, text="Mode Select")
         l.pack(side=TOP, expand=1)
 
+        self.__show_mode(frame)
+
+        act = action.Action(self.mode_data)
+        buf = act.get_buf()
+
+        e = tkinter.Entry(frame, textvariable = buf)
+        e.pack()
+        e.focus_set()
+        e.bind('<Return>', act.select_mode)
+
+        b = tkinter.Button(frame, text="Select", command=act.test_method)
+        b.pack(side=BOTTOM)
+
+        tk.mainloop()
+
+    def __show_mode(self, frame):
         for data in self.mode_data:
             l = tkinter.Label(frame, text=data['mode'])
             l.pack()
 
-        e = tkinter.Entry(frame)
-        e.pack()
-        e.focus_set()
-        e.bind('<Return>', select_mode)
-
-        b = tkinter.Button(frame, text="Select", command=test_method)
-        b.pack(side=BOTTOM)
-
-        tk.mainloop()
 
 
 if __name__ == "__main__":
