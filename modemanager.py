@@ -28,9 +28,6 @@ class Viewer:
         e.focus_set()
         e.bind('<Return>', act.select_mode)
 
-        b = tkinter.Button(frame, text="Select", command=act.test_method)
-        b.pack(side=BOTTOM)
-
         tk.mainloop()
 
     def __show_mode(self, frame):
