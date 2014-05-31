@@ -10,12 +10,19 @@ class Action:
 
         self.mode_data = mode_data
 
-    def __test_method(self):
-        os.system('open -a' + app_name)
+    # open apps list
+    def __open_apps(self, applist):
+        for appname in applist:
+            os.system('open -a' + appname)
 
+    # select mode from yaml file.
     def select_mode(self, event):
-        if self.__have_input_mode() == "":
+        modedic = self.__have_input_mode()
+        if modedic == "":
             return
+
+        apps = modedic['app']
+        self.__open_apps(apps)
 
     def __have_input_mode(self):
         if self.buf.get():
@@ -25,13 +32,11 @@ class Action:
 
         for i, dic in enumerate(self.mode_data):
             if str(i) == mode:
-                mode = dic['mode']
-                return mode
+                return dic
 
         for i, dic in enumerate(self.mode_data):
             if dic['mode'] == mode:
-                mode = dic['mode']
-                return mode
+                return dic
 
         return ""
 
