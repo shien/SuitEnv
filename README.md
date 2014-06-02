@@ -19,7 +19,7 @@ Mac の Application を、自分の環境にすぐ変更できる。
 
 ## 設定ファイル記述
 
-```yaml:sample.yaml
+``` yaml:sample.yaml
 - mode: concentration
   app:
   - "eclipse"
