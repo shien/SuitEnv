@@ -24,6 +24,8 @@ Mac でしか動きません。
 mode: で application のグループ名を指定します。
 app: にはそのグループに含む Application の名前を指定します。
 
+sample.yaml っていうファイル名しか認識しないので（ダサすぎる。要修正）ファイル名は変更しないようにしてください。
+
 > - mode: concentration
 >  app:
 >  - "eclipse"
@@ -35,3 +37,9 @@ app: にはそのグループに含む Application の名前を指定します�
 >  - "twitter"
 >  - "mail"
 >  - "skype"
+
+### 使い方
+設定ファイル sample.yaml を編集後に、Python 3.4 の環境で python3.4 suitenv.py を実行します。
+表示されたリストの番号か名前を入力すれば、設定ファイルに記述した Application が実行されます。最初に開いたものと別の番号を選ぶと、最初に開いていないものが開かれ、また後から開いたものにない application は終了されます。
+
+application によっては認識されるものとされないものがあるようです。（要検証）
