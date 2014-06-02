@@ -1,11 +1,11 @@
 - mode: concentration
   app:
-   - iterm
-   - chrome
+   - "eclipse"
+   - "google chrome"
 - mode: relax
   app:
-   - itunes
-   - chrome
-   - twitter
-   - mail
-   - skype
+   - "itunes"
+   - "google chrome"
+   - "twitter"
+   - "mail"
+   - "skype"
