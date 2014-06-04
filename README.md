@@ -1,8 +1,6 @@
 SuitEnv
 =======
 
-#### ＊まだ未完成です。
-
 ### 概要
 Mac の Application を、自分の環境にすぐ変更できる。
 くつろぐ時は iTunes 、Twitter、Skype、Browser を起動。
