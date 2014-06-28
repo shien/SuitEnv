@@ -44,18 +44,14 @@ class Action:
 
         old_apps = self.modedic['app']
 
-        # make to close apps list
+        # make list to close
         set_close_app = set(old_apps) - set(new_apps)
         close_apps = list(set_close_app)
-        print("close :")
-        print(close_apps)
         self.__close_apps(close_apps)
 
-        # make to open apps list
+        # make list to open apps
         set_open_apps = set(new_apps) - set(old_apps)
         open_apps = list(set_open_apps)
-        print("open :")
-        print(open_apps)
         self.__open_apps(open_apps)
 
         self.modedic = modedic
